@@ -14,7 +14,7 @@ body {
 }
 
 header {
-    font-size: 4vmin;
+    font-size: 10vmin ;
     color: darkgray;
     letter-spacing: 1vmin;
     font-family: 'Montserrat', sans-serif;
@@ -51,19 +51,19 @@ header, h1, button {
     text-transform: uppercase;
 }
 
-.l0:nth-child(1), .c1r0:nth-child(2), .c2r0:nth-child(3) {
+#c0:nth-child(1), #c1:nth-child(2), #c2:nth-child(3) {
     border-top: none;
 }
 
-#c0r0:nth-child(1), #c0r1:nth-child(4), #c0r2:nth-child(7) {
+#c0:nth-child(1), #c3:nth-child(4), #c6:nth-child(7) {
     border-left: none;
 }
 
-#c2r0:nth-child(3), #c2r1:nth-child(6), #c2r2:nth-child(9) {
+#c2:nth-child(3), #c5:nth-child(6), #c8:nth-child(9) {
     border-right: none;
 }
 
-#c0r2:nth-child(7), #c1r2:nth-child(8), #c2r2:nth-child(9) {
+#c6:nth-child(7), #c7:nth-child(8), #c8:nth-child(9) {
     border-bottom: none;
 }
 

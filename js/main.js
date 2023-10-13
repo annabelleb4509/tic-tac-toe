@@ -6,6 +6,12 @@ const COLORS = {
     '-1': 'black',
 };
 
+const SYMBOL = {
+    '0': '',
+    '1': 'X',
+    '-1': 'O',
+};
+
 
 const winningCombos = [
     [0, 1, 2],
@@ -59,10 +65,8 @@ function init() {
 
 
 function handleDrop(event) {  
-    console.log('drop detected');
-    // const Index = elements.boardElements[event.target.id];
     const Index = event.target.id
-    if (state.board[Index] !== 0) {                 //    console.log(winner)
+    if (state.board[Index] !== 0) {                 
         return; // exit the function (so the rest doesn't get mad)
     }
     if (state.winner !== null) {
@@ -95,23 +99,22 @@ function render() {
 
 function renderBoard() {
     state.board.forEach(function (square, index) {
-        elements.boardElements[index].style.backgroundColor = COLORS[square];
-        });
-    };
-    
-    
-    function renderMessage() {          // show winner
-     if (state.winner) {
-            elements.message.innerHTML = `<span style="color: ${ COLORS[state.winner] }">${ COLORS[state.winner] }</span> wins!`; 
-        } else {
-            elements.message.innerHTML = `<span style="color: ${ COLORS[state.turn] }">${ COLORS[state.turn] }</span>'s turn`;   
-        }
-    }
-    
-  /*  
-    function renderControls() {
-        elements.boardElements.forEach(function (square) {
-            square.style.visibility = state.winner ? 'hidden' : 'visible';
-        });
+        elements.boardElements[index].innerText = SYMBOL[square];
+        elements.boardElements[index].style.color = COLORS[square];
+        elements.boardElements[index].style.textAlign = 'center';
+        elements.boardElements[index].style.padding = '15px';
+        elements.boardElements[index].style.fontSize = '40px';
+        elements.boardElements[index].style.fontWeight = '900';
+    });
 };
-*/
+
+
+    
+function renderMessage() {          // show winner
+    if (state.winner) {
+        elements.message.innerHTML = `<span style="color: ${ COLORS[state.winner] }">${ COLORS[state.winner] }</span> wins!`; 
+    } else {
+        elements.message.innerHTML = `<span style="color: ${ COLORS[state.turn] }">${ COLORS[state.turn] }</span>'s turn`;   
+    }
+}
+    
