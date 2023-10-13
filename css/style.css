@@ -1,0 +1,69 @@
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Montserrat', sans-serif;
+}
+
+header {
+    font-size: 4vmin;
+    color: darkgray;
+    letter-spacing: 1vmin;
+    font-family: 'Montserrat', sans-serif;
+}
+
+#board {
+    display: grid;
+    grid-template-columns: repeat(3, 10vmin);
+    grid-template-rows: repeat(3, 10vmin);
+    margin-top: 4vmin;
+}
+
+#board > div {
+    border: 0.1vmin solid grey;
+}
+
+
+button {
+    margin-top: 4vmin;
+    padding: 2vmin;
+    font-size: 2vmin;
+    border-radius: 2vmin;
+    border: 0.1vmin solid grey;
+    color: grey;
+}
+
+button:hover {
+    color: white;
+    background-color: darkgrey;
+
+}
+
+header, h1, button {
+    text-transform: uppercase;
+}
+
+.l0:nth-child(1), .c1r0:nth-child(2), .c2r0:nth-child(3) {
+    border-top: none;
+}
+
+#c0r0:nth-child(1), #c0r1:nth-child(4), #c0r2:nth-child(7) {
+    border-left: none;
+}
+
+#c2r0:nth-child(3), #c2r1:nth-child(6), #c2r2:nth-child(9) {
+    border-right: none;
+}
+
+#c0r2:nth-child(7), #c1r2:nth-child(8), #c2r2:nth-child(9) {
+    border-bottom: none;
+}
+
